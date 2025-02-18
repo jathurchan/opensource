@@ -18,7 +18,7 @@ export type Frontmatter = {
      * from the `title` in the filename.
      * Optional. Default is `false`.
      */
-    allowTitleToDifferFromFilename?: boolean;
+    allowTitleToDifferFromFilename: boolean;
 
     /**
      * Date.
@@ -42,24 +42,24 @@ export type Frontmatter = {
      * Array of projects (array of `id` of `Project`).
      * Optional.
      */
-    projects?: string[];
+    projects: string[];
 
     /**
      * Array of skills (array of `id` of `Skill`).
      * Optional.
      */
-    skills?: string[];  // (array of `id` of `Skill`)
+    skills: string[];  // (array of `id` of `Skill`)
 
     /**
      * Array of links (e.g. /content/YYYY-MM-DD-test.md).
      * Optional.
      */
-    includeLinks?: string[];
+    includeLinks: string[];
 
     /**
      * Indicates whether all PRs that include the content file
      * should be listed.
      * Optional. Default is `true`.
      */
-    showRelatedPRs?: boolean;
+    showRelatedPRs: boolean;
 }
