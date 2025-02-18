@@ -27,50 +27,52 @@ The goal is to implement a reliable and efficient `validateMarkdownFrontMatter` 
 
 ## Proposed Solution
 
-We evaluated several approaches for validating the Markdown frontmatter:
+Several approaches for automatically validating the Markdown frontmatter were considered:
 
-### 1. Using AJV (Another JSON Schema Validator): Recommended Solution
+### 1. Using AJV (Another JSON Schema Validator)
 
-AJV offers the best balance between rigor and maintainability. The declarative JSON Schema allows us to precisely define the shape and constraints of the frontmatter, while AJV's performance and error reporting ensure that issues are caught early both locally and in CI pipelines.
-
-#### Pros
+Pros:
 
 - Mature and widely adopted with a robust ecosystem.
 - Leverages JSON Schema for clear and declarative definitions.
 - Excellent error reporting and support for complex validation (including custom formats).
 - Can automatically enforce strict validation rules (e.g., no additional properties).
 
-#### Cons
+Cons:
 
 - Requires understanding of JSON Schema syntax.
 - Some learning curve for configuring custom formats (e.g., converting date strings to Date objects).
 
 ### 2. Zod
 
-#### Pros
+Pros:
 
 - TypeScript-first library with excellent integration, providing static type inference.
 - Intuitive API for many developers familiar with functional programming.
 - Clear error messages and composability.
 
-#### Cons
+Cons:
 
 - Slightly less mature ecosystem compared to AJV.
 - Some limitations when working with highly complex validation logic or non-standard formats.
 
 #### 3. Custom Validation Code
 
-#### Pros
+Pros:
 
 - Fully customizable and flexible.
 - No dependencies on external libraries.
 - Tailored error messages and control over the validation process.
 
-#### Cons
+Cons:
 
 - Reinvents the wheel and increases maintenance burden.
 - Harder to scale as the complexity of metadata requirements grows.
 - Higher risk of introducing bugs in the validation logic.
+
+### Recommended Solution
+
+Using AJV with a well-defined JSON Schema to validate and parse Markdown frontmatter as it is easy to extend the schema as new fields and constraints arise, get clear and structured error messages, and set maintenable validation rules.
 
 ## Implementation Plan
 
