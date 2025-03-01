@@ -13,6 +13,8 @@
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
     "jest-environment-jsdom": "^29.7.0",
     "next": "15.1.6",
     "react": "^19.0.0",
